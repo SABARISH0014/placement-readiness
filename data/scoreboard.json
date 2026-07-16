@@ -3490,7 +3490,7 @@
     "manualAdjustments": null
   },
   "25mx354": {
-    "total": 45,
+    "total": 60,
     "byDay": {
       "2026-07-14": {
         "submitted": 10,
@@ -3507,11 +3507,11 @@
         "documentation": 5
       },
       "2026-07-16": {
-        "submitted": 0,
+        "submitted": 10,
         "quality": 0,
         "reflection": 0,
         "prompting": 0,
-        "documentation": 0
+        "documentation": 5
       },
       "2026-07-17": {
         "submitted": 0,
@@ -13262,7 +13262,7 @@
     "manualAdjustments": null
   },
   "25mx322": {
-    "total": 45,
+    "total": 60,
     "byDay": {
       "2026-07-14": {
         "submitted": 10,
@@ -13279,11 +13279,11 @@
         "documentation": 5
       },
       "2026-07-16": {
-        "submitted": 0,
+        "submitted": 10,
         "quality": 0,
         "reflection": 0,
         "prompting": 0,
-        "documentation": 0
+        "documentation": 5
       },
       "2026-07-17": {
         "submitted": 0,
@@ -23034,7 +23034,7 @@
     "manualAdjustments": null
   },
   "25mx343": {
-    "total": 45,
+    "total": 60,
     "byDay": {
       "2026-07-14": {
         "submitted": 10,
@@ -23051,11 +23051,11 @@
         "documentation": 5
       },
       "2026-07-16": {
-        "submitted": 0,
+        "submitted": 10,
         "quality": 0,
         "reflection": 0,
         "prompting": 0,
-        "documentation": 0
+        "documentation": 5
       },
       "2026-07-17": {
         "submitted": 0,
@@ -29665,7 +29665,7 @@
     "manualAdjustments": null
   },
   "25mx352": {
-    "total": 45,
+    "total": 55,
     "byDay": {
       "2026-07-14": {
         "submitted": 10,
@@ -29682,7 +29682,7 @@
         "documentation": 5
       },
       "2026-07-16": {
-        "submitted": 0,
+        "submitted": 10,
         "quality": 0,
         "reflection": 0,
         "prompting": 0,

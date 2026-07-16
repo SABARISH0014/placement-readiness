@@ -78,24 +78,13 @@ const existingTeams = readJSON('data/teams.json') ?? {};
 const activitiesDir = resolve(ROOT, 'activities');
 const days = listDirs(activitiesDir).sort(); // e.g. ['2026-07-10', '2026-07-11', ...]
 
-// Map: day → Set of roll numbers who submitted
+// Map: day → Array of original folder names (e.g. ['25MX343', '25mx322'])
 const submittedByDay = {};
 
-// Ensure July 16 Foundation Day is always processed even if it has no activity folder
-if (!days.includes('2026-07-16')) {
-  days.push('2026-07-16');
-  days.sort();
-}
-
 for (const day of days) {
-  if (day === '2026-07-16') {
-    const submitters = Object.keys(roster).filter(r => existsSync(resolve(ROOT, `students/${r}/profile.md`)));
-    submittedByDay[day] = new Set(submitters);
-  } else {
-    const dayDir = join(activitiesDir, day);
-    const submitters = listDirs(dayDir); // roll-number-named folders
-    submittedByDay[day] = new Set(submitters.filter(r => roster[r]));
-  }
+  const dayDir = join(activitiesDir, day);
+  const folders = listDirs(dayDir);
+  submittedByDay[day] = folders.filter(f => roster[f.toLowerCase()]);
 }
 
 console.log('\n📊 Recalculating scores...\n');
@@ -113,7 +102,8 @@ for (const roll of Object.keys(roster)) {
     if (wasManual) {
       attendance[roll][day] = 'manual-present';
     } else {
-      attendance[roll][day] = submittedByDay[day]?.has(roll) ? 'present' : 'absent';
+      const submittedFolder = submittedByDay[day]?.find(f => f.toLowerCase() === roll);
+      attendance[roll][day] = submittedFolder ? 'present' : 'absent';
     }
   }
 }
@@ -130,11 +120,14 @@ for (const roll of Object.keys(roster)) {
 
   for (const day of days) {
     const prev = existing.byDay?.[day] ?? {};
-    const submitted = (submittedByDay[day]?.has(roll) || attendance[roll][day] === 'manual-present') ? 10 : 0;
+    
+    // Find if there's a folder matching this roll number (case-insensitive)
+    const submittedFolder = submittedByDay[day]?.find(f => f.toLowerCase() === roll);
+    const submitted = (submittedFolder || attendance[roll][day] === 'manual-present') ? 10 : 0;
 
     // documentation: recompute heuristic, but never lower a manually-set value above heuristic
-    const readmePath = join(activitiesDir, day, roll, 'README.md');
-    const docHeuristic = submitted > 0 ? documentationScore(readmePath) : 0;
+    const readmePath = submittedFolder ? join(activitiesDir, day, submittedFolder, 'README.md') : '';
+    const docHeuristic = (submittedFolder && existsSync(readmePath)) ? documentationScore(readmePath) : 0;
     const documentation = submitted > 0 ? Math.max(prev.documentation ?? 0, docHeuristic) : 0;
 
     // quality / reflection / prompting: default to 5 if newly submitted and not yet graded
