@@ -2,8 +2,8 @@ name: Daily Recalculate & Deploy
 
 on:
   schedule:
-    # Runs at 18:30 UTC every day (which is exactly midnight 00:00 IST)
-    - cron: '30 18 * * *'
+    # Runs every 6 hours (4 times a day)
+    - cron: '0 */6 * * *'
   workflow_dispatch: # Allows manual trigger from the GitHub UI
 
 jobs:
@@ -47,4 +47,15 @@ jobs:
               exit 1
             fi
             echo "✅ Committed and pushed updated files."
+          fi
+
+      - name: Trigger Vercel Deploy Hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -n "$VERCEL_DEPLOY_HOOK" ]; then
+            curl -X POST "$VERCEL_DEPLOY_HOOK"
+            echo "✅ Vercel deploy hook triggered."
+          else
+            echo "⏭️ No VERCEL_DEPLOY_HOOK secret found, skipping."
           fi
