@@ -22,19 +22,19 @@ A fully transparent, GitHub-driven leaderboard and submission portal. No databas
 <!-- LEADERBOARD:START -->
 | Rank | Student | Roll No | Score | Attendance |
 |------|---------|---------|-------|-----------|
-| 🥇 1 | SABARISH P | 25mx343 | 80 | 3/3 (100%) |
-| 🥈 2 | Keerthanaa J | 25mx323 | 50 | 2/3 (67%) |
-| 🥉 3 | R.G.A.Sakthivel Mallaiah | 25mx217 | 50 | 2/3 (67%) |
-| 4 | KASBIYA M | 25mx322 | 50 | 2/3 (67%) |
-| 5 | POORANI R | 25mx338 | 50 | 2/3 (67%) |
-| 6 | VISHNUVARDANI K S | 25mx359 | 50 | 2/3 (67%) |
-| 7 | Krishna Priya | 25mx115 | 50 | 2/3 (67%) |
-| 8 | Deepa M | 25mx309 | 50 | 2/3 (67%) |
-| 9 | BARATHVIKRAMAN S K | 25mx103 | 50 | 2/3 (67%) |
-| 10 | Shanmugappriya K | 25mx223 | 48 | 2/3 (67%) |
+| 🥇 1 | SABARISH P | 25mx343 | 105 | 4/4 (100%) |
+| 🥈 2 | Keerthanaa J | 25mx323 | 50 | 2/4 (50%) |
+| 🥉 3 | R.G.A.Sakthivel Mallaiah | 25mx217 | 50 | 2/4 (50%) |
+| 4 | KASBIYA M | 25mx322 | 50 | 2/4 (50%) |
+| 5 | POORANI R | 25mx338 | 50 | 2/4 (50%) |
+| 6 | VISHNUVARDANI K S | 25mx359 | 50 | 2/4 (50%) |
+| 7 | Krishna Priya | 25mx115 | 50 | 2/4 (50%) |
+| 8 | Deepa M | 25mx309 | 50 | 2/4 (50%) |
+| 9 | BARATHVIKRAMAN S K | 25mx103 | 50 | 2/4 (50%) |
+| 10 | Shanmugappriya K | 25mx223 | 48 | 2/4 (50%) |
 
 **🏆 Top Team:** Team 6 (avg: 12.3 pts)
-**Today's submissions:** 1/123 students submitted on 2026-07-20 · **Last updated:** 2026-07-21
+**Today's submissions:** 1/123 students submitted on 2026-07-21 · **Last updated:** 2026-07-21
 <!-- LEADERBOARD:END -->
 
 ---
